@@ -15,7 +15,6 @@ class CategoryScreen(BaseScreen):
         self.wait_element_to_be_clickable(CategoryScreenLocators.PRODUCTS_LIST)
         self.products = self.driver.find_elements(*CategoryScreenLocators.PRODUCTS)
 
-    # TODO: maybe create class for this dialoguescreen?
     def close_dialogue_screen(self):
         """
         Closes dialogue screen

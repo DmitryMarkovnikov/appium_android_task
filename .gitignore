@@ -58,3 +58,6 @@ tmp
 .idea
 .vagga
 venv
+
+app
+logs

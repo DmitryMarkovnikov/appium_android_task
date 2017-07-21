@@ -12,8 +12,10 @@ class LoginScreen(BaseScreen):
 
     def login(self, account):
         """
-
-        :return:
+        Performs log in with provided registered account
+        :param account dictionary with keys "name" and "password"
+        :type account dict
+        :return: MainScreen object
         """
         self.username = account["name"]
         self.password = account["password"]

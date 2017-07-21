@@ -8,13 +8,15 @@ from appium import webdriver
 
 from util import load_yaml
 
+pytest_plugins = ['tests.logger_plugin']
 
-@pytest.fixture(autouse=True, scope="session")  # this fixture is not necessary for the task
+
+@pytest.fixture(autouse=True, scope="session")  # comment and run standalone server for local development
 def run_appium():
     """Fixture to run on CI to run before the session appium server and terminate it after tests session is closed"""
     appium = subprocess.Popen('appium')
     assert appium.poll() is None
-    time.sleep(5)
+    time.sleep(5)  # TODO: log appium to file, remove this sleep
     yield
     appium.terminate()
 
@@ -27,7 +29,9 @@ def record_video():
     """
     timestamp = datetime.datetime.now().isoformat()
     recording = subprocess.Popen(['adb', 'shell', 'screenrecord', '/sdcard/{}.mp4'.format(timestamp)])
+    assert recording.poll() is None
     yield
+    time.sleep(7)  # TODO: investigate how to remove sleep, without it video is 00:00 duration
     recording.terminate()
     subprocess.Popen(['adb', 'pull', '/sdcard/{}.mp4'.format(timestamp), 'videos/'])
 

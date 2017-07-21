@@ -8,7 +8,7 @@ class WelcomeScreen(BaseScreen):
 
     def use_email_to_enter(self):
         """
-
+        Clicks the email button to go for registration/login screen
         :return: SignUpScreen object
         """
         self.wait_element_to_be_clickable(WelcomeScreenLocators.EMAIL_BUTTON)
