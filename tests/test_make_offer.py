@@ -16,7 +16,7 @@ class TestSmoke:
         logger.debug('Account name: {0}, account password: {1}'.format(account['name'], account['password']))
         main_screen = login_screen.login(account)
         logger.info('Search and tap the category')
-        cars_category = main_screen.open_category('cars')  # TODO fails time to time on this step
+        cars_category = main_screen.open_category('cars')
         logger.info('Open item by index')
         car = cars_category.open_detailed_item_by_index(0)
         logger.info('Going to making offer screen')

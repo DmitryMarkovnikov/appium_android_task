@@ -31,8 +31,8 @@ def record_video():
     recording = subprocess.Popen(['adb', 'shell', 'screenrecord', '/sdcard/{}.mp4'.format(timestamp)])
     assert recording.poll() is None
     yield
-    time.sleep(7)  # TODO: investigate how to remove sleep, without it video is 00:00 duration
     recording.terminate()
+    time.sleep(3)  # TODO: investigate how to remove sleep, without it video is 00:00 duration
     subprocess.Popen(['adb', 'pull', '/sdcard/{}.mp4'.format(timestamp), 'videos/'])
 
 

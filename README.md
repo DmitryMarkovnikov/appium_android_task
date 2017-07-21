@@ -1,4 +1,4 @@
-## Appium android test framework based on Python, pytest, appium, PO pattern
+## Appium android test framework based on python, pytest, appium, PO pattern
 
 
 ### Install
@@ -30,12 +30,12 @@ Install appium
 
 ### Helpers
 
-    Assuming that you've installed everything correctly, I mean you have $ANDROID_HOME leading to yuor android sdk
+    Assuming that you've installed everything correctly, I mean you have $ANDROID_HOME leading to your android sdk
     there is a utils/bootstrap.sh script that downloads sdk and creates a virtual device to run tests.
     Because I've faced an issue while doing test task on AVD based on android 7.x:
     https://github.com/appium/appium/issues/7588
     I've decided to switch to android 6.x and create this sh script to configure environment.
-    Uusage example ./bootstrap.sh to download and create avd or ./bootstrap.sh -run to + run emulator
+    Usage example ./bootstrap.sh to download and create avd or ./bootstrap.sh -run to + run emulator
 
 ### Demo
 
